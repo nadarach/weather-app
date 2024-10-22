@@ -19,6 +19,16 @@ hbs.registerPartials(partialsPath);
 
 //set up static directory to serve (html, css, other assets)
 app.use(express.static(publicDirectoryPath));
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
  
 //configure the routes for the app
 app.get('', (req, res) => {
@@ -45,6 +55,7 @@ app.get("/help", (req, res) => {
 
 app.get("/weather", (req, res) => {
   const address = req.query.address;
+  console.log(res);
   if (!address) {
     return res.send({
       error: 'You must specify an address.'
