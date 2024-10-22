@@ -19,6 +19,7 @@ form {
   display: flex;
   justify-content: space-between;
   border-radius:10px;
+  margin-bottom: 36px;
 }
 
 form button,
@@ -61,7 +62,7 @@ h1 {
 
 header {
   margin-top : 16px;
-  margin-bottom: 64px;
+  margin-bottom: 56px;
   padding-bottom: 16px;
   border-bottom: 1px solid #7FA1C3;
 }
@@ -88,6 +89,7 @@ footer {
   padding-top: 12px;
   text-align: center;
 }
+
 .result {
   margin: 16px auto;
   border: 1px solid #7FA1C3;
